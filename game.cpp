@@ -39,11 +39,11 @@ GameState* Game::peekState()
 void Game::gameLoop()
 {
     sf::Clock clock;
-    float dt;
 
     while(this->window.isOpen())
     {
-        dt = clock.restart().asSeconds();
+        sf::Time elapsed = clock.restart();
+        float dt = elapsed.asSeconds();
 
         if(peekState() == nullptr) continue;
         peekState()->handleInput();
