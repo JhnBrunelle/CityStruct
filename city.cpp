@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <numeric>
 
 #include "city.hpp"
 #include "tile.hpp"
@@ -73,7 +74,7 @@ void City::shuffleTiles()
     {
         this->shuffledTiles.push_back(0);
     }
-    std::iota(shuffledTiles.begin(), shuffledTiles.end(), 1);
+    std::iota(shuffledTiles.begin(), shuffledTiles.end(), 0);
     std::random_shuffle(shuffledTiles.begin(), shuffledTiles.end());
 
     return;
